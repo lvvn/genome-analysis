@@ -177,93 +177,93 @@ python -m jcvi.compara.synteny screen --minspan=30 --simple macadamia.lotus.anch
 python -m jcvi.graphics.karyotype seqids layout \
 
 
-RNA ananlysis
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell1-1_R1.fq.gz	--right rawdata/shell1-1_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell1-1
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell1-2_R1.fq.gz	--right rawdata/shell1-2_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell1-2
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell1-3_R1.fq.gz	--right rawdata/shell1-3_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell1-3
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell2-1_R1.fq.gz	--right rawdata/shell2-1_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell2-1
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell2-2_R1.fq.gz	--right rawdata/shell2-2_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell2-2
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell2-3_R1.fq.gz	--right rawdata/shell2-3_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell2-3
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell3-1_R1.fq.gz	--right rawdata/shell3-1_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell3-1
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell3-2_R1.fq.gz	--right rawdata/shell3-2_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell3-2
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell3-3_R1.fq.gz	--right rawdata/shell3-3_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell3-3
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell4-1_R1.fq.gz	--right rawdata/shell4-1_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell4-1
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell4-2_R1.fq.gz	--right rawdata/shell4-2_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell4-2
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell4-3_R1.fq.gz	--right rawdata/shell4-3_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell4-3
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell5-1_R1.fq.gz	--right rawdata/shell5-1_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell5-1
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell5-2_R1.fq.gz	--right rawdata/shell5-2_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell5-2
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell5-3_R1.fq.gz	--right rawdata/shell5-3_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell5-3
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/youye_R1.fq.gz	    --right rawdata/youye_R2.fq.gz	       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/youye
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/laoye_R1.fq.gz	    --right rawdata/laoye_R2.fq.gz	       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/laoye
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/fruit_R1.fq.gz	    --right rawdata/fruit_R2.fq.gz	       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/fruit
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/jing_R1.fq.gz	    --right rawdata/jing_R2.fq.g       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/jing
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/root_R1.fq.gz	    --right rawdata/root_R2.fq.g       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/root
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/flower_R1.fq.gz	    --right rawdata/flower_R2.fq.gz	       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/flower
-perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/oldstem_R1.fq.gz	--right rawdata/oldstem_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/oldstem
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_1-1_R1.fq.gz --right kernel_1-1_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_1-1 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_1-2_R1.fq.gz --right kernel_1-2_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_1-2 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_1-3_R1.fq.gz --right kernel_1-3_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_1-3 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_2-1_R1.fq.gz --right kernel_2-1_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_2-1 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_3-1_R1.fq.gz --right kernel_3-1_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_3-1 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_3-2_R1.fq.gz --right kernel_3-2_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_3-2 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_3-3_R1.fq.gz --right kernel_3-3_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_3-3 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_4-1_R1.fq.gz --right kernel_4-1_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_4-1 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_4-2_R1.fq.gz --right kernel_4-2_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_4-2 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_4-3_R1.fq.gz --right kernel_4-3_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_4-3 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_5-1_R1.fq.gz --right kernel_5-1_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_5-1 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_5-2_R1.fq.gz --right kernel_5-2_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_5-2 
-perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_5-3_R1.fq.gz --right kernel_5-3_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_5-3
+RNA ananlysis \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell1-1_R1.fq.gz	--right rawdata/shell1-1_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell1-1 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell1-2_R1.fq.gz	--right rawdata/shell1-2_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell1-2 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell1-3_R1.fq.gz	--right rawdata/shell1-3_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell1-3 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell2-1_R1.fq.gz	--right rawdata/shell2-1_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell2-1 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell2-2_R1.fq.gz	--right rawdata/shell2-2_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell2-2 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell2-3_R1.fq.gz	--right rawdata/shell2-3_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell2-3 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell3-1_R1.fq.gz	--right rawdata/shell3-1_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell3-1 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell3-2_R1.fq.gz	--right rawdata/shell3-2_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell3-2 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell3-3_R1.fq.gz	--right rawdata/shell3-3_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell3-3 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell4-1_R1.fq.gz	--right rawdata/shell4-1_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell4-1 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell4-2_R1.fq.gz	--right rawdata/shell4-2_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell4-2 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell4-3_R1.fq.gz	--right rawdata/shell4-3_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell4-3 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell5-1_R1.fq.gz	--right rawdata/shell5-1_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell5-1 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell5-2_R1.fq.gz	--right rawdata/shell5-2_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell5-2 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell5-3_R1.fq.gz	--right rawdata/shell5-3_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell5-3 \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/youye_R1.fq.gz	    --right rawdata/youye_R2.fq.gz	       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/youye \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/laoye_R1.fq.gz	    --right rawdata/laoye_R2.fq.gz	       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/laoye \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/fruit_R1.fq.gz	    --right rawdata/fruit_R2.fq.gz	       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/fruit \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/jing_R1.fq.gz	    --right rawdata/jing_R2.fq.g       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/jing \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/root_R1.fq.gz	    --right rawdata/root_R2.fq.g       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/root \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/flower_R1.fq.gz	    --right rawdata/flower_R2.fq.gz	       --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/flower \
+perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/oldstem_R1.fq.gz	--right rawdata/oldstem_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/oldstem \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_1-1_R1.fq.gz --right kernel_1-1_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_1-1  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_1-2_R1.fq.gz --right kernel_1-2_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_1-2  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_1-3_R1.fq.gz --right kernel_1-3_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_1-3  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_2-1_R1.fq.gz --right kernel_2-1_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_2-1  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_3-1_R1.fq.gz --right kernel_3-1_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_3-1  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_3-2_R1.fq.gz --right kernel_3-2_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_3-2  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_3-3_R1.fq.gz --right kernel_3-3_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_3-3  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_4-1_R1.fq.gz --right kernel_4-1_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_4-1  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_4-2_R1.fq.gz --right kernel_4-2_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_4-2  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_4-3_R1.fq.gz --right kernel_4-3_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_4-3  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_5-1_R1.fq.gz --right kernel_5-1_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_5-1  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_5-2_R1.fq.gz --right kernel_5-2_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_5-2  \
+perl align_and_estimate_abundance.pl --transcripts reference.cds.fa --seqType fq --left kernel_5-3_R1.fq.gz --right kernel_5-3_R2.fq.gz --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab  --prep_reference  --thread_count 4 --output_dir rawdata1/kernel_5-3 \
 
-find * -name 'RSEM.genes.results' >quant_gene.file
-perl ~/software/trinityrnaseq-Trinity-v2.6.6/util/abundance_estimates_to_matrix.pl --est_method RSEM --gene_trans_map ../gene_trans_map.tab --name_sample_by_basedir --quant_files quant_gene.file
-perl ~/software/trinityrnaseq-Trinity-v2.6.6/Analysis/DifferentialExpression/run_DE_analysis.pl --matrix RSEM.gene.counts.matrix --method edgeR --samples_file samples_described.txt
-cut -f 1,3,4 shell5-3/RSEM.genes.results > feature_lengths.txt
-perl ~/software/trinityrnaseq-Trinity-v2.6.6/Analysis/DifferentialExpression/run_TMM_normalization_write_FPKM_matrix.pl --matrix RSEM.gene.counts.matrix --lengths feature_lengths.txt
-perl ~/software/trinityrnaseq-Trinity-v2.6.6/Analysis/DifferentialExpression/analyze_diff_expr.pl --matrix ../RSEM.gene.counts.matrix.TMM_normalized.FPKM -P 0.01 -C 2 --samples ../samples_described.txt
+find * -name 'RSEM.genes.results' >quant_gene.file \
+perl ~/software/trinityrnaseq-Trinity-v2.6.6/util/abundance_estimates_to_matrix.pl --est_method RSEM --gene_trans_map ../gene_trans_map.tab --name_sample_by_basedir --quant_files quant_gene.file \
+perl ~/software/trinityrnaseq-Trinity-v2.6.6/Analysis/DifferentialExpression/run_DE_analysis.pl --matrix RSEM.gene.counts.matrix --method edgeR --samples_file samples_described.txt \
+cut -f 1,3,4 shell5-3/RSEM.genes.results > feature_lengths.txt \
+perl ~/software/trinityrnaseq-Trinity-v2.6.6/Analysis/DifferentialExpression/run_TMM_normalization_write_FPKM_matrix.pl --matrix RSEM.gene.counts.matrix --lengths feature_lengths.txt \
+perl ~/software/trinityrnaseq-Trinity-v2.6.6/Analysis/DifferentialExpression/analyze_diff_expr.pl --matrix ../RSEM.gene.counts.matrix.TMM_normalized.FPKM -P 0.01 -C 2 --samples ../samples_described.txt \
 
 
-mfuzz
-library("Mfuzz")
+mfuzz \
+library("Mfuzz") \
 
-gene <- read.table("new.average.FPKM",header = T,row.names=1,sep="\t")
-gene_tpm <- data.matrix(gene)
-eset <- new("ExpressionSet",exprs = gene_tpm)
-gene.r <- filter.NA(eset, thres=0.25)
-gene.f <- fill.NA(gene.r,mode="mean")
-gene.f <- fill.NA(gene.r,mode="knn")
-gene.f <- fill.NA(gene.r,mode="wknn")
-tmp <- filter.std(gene.f,min.std=0)
-gene.s <- standardise(tmp)
-c <- 16
-m <- mestimate(gene.s)
-cl <- mfuzz(gene.s, c = c, m = m)
-cl$size
-cl$cluster[cl$cluster == 1]
-write.table(cl$cluster,"shellup3.txt",quote=F,row.names=T,col.names=F,sep="\t")
-pdf("shellup3.pdf",width = 14, height = 7)
-mfuzz.plot(gene.s,cl,mfrow=c(2,3),new.window= FALSE)
-mfuzz.plot(gene.s,cl,mfrow=c(2,3),new.window= FALSE,time.labels = c('Shell1','Shell2','Shell3','Shell4','Shell5','Kernel1','Kernel2','Kernel3','Kernel4','Kernel5','Leaf','Flower','Stem','Root'))
+gene <- read.table("new.average.FPKM",header = T,row.names=1,sep="\t") \
+gene_tpm <- data.matrix(gene) \
+eset <- new("ExpressionSet",exprs = gene_tpm) \
+gene.r <- filter.NA(eset, thres=0.25) \
+gene.f <- fill.NA(gene.r,mode="mean") \
+gene.f <- fill.NA(gene.r,mode="knn") \
+gene.f <- fill.NA(gene.r,mode="wknn") \
+tmp <- filter.std(gene.f,min.std=0) \
+gene.s <- standardise(tmp) \
+c <- 16 \
+m <- mestimate(gene.s) \
+cl <- mfuzz(gene.s, c = c, m = m) \
+cl$size \
+cl$cluster[cl$cluster == 1] \
+write.table(cl$cluster,"shellup3.txt",quote=F,row.names=T,col.names=F,sep="\t") \
+pdf("shellup3.pdf",width = 14, height = 7) \
+mfuzz.plot(gene.s,cl,mfrow=c(2,3),new.window= FALSE) \
+mfuzz.plot(gene.s,cl,mfrow=c(2,3),new.window= FALSE,time.labels =  c('Shell1','Shell2','Shell3','Shell4','Shell5','Kernel1','Kernel2','Kernel3','Kernel4','Kernel5','Leaf','Flower','Stem','Root'))
 dev.off()
 
 
-Population genomic analysis
-call snp
-samtools faidx reference.fa
-bwa index reference.fa
-java -jar ~/software/picard-tools/CreateSequenceDictionary.jar R=reference.fa O=reference.dict
-bwa mem -t 2 -M -R '@RG\tID:maizemt\tSM:emp5-4-emp21-1\tPL:illumina\tLB:lib1\tCN:Minglab' reference5mt.fa smaple1_1.fq.gz smaple1_2.fq.gz > smaple1.sam
-java -jar ~/software/picard-tools/ReorderSam.jar I=smaple1.sam O=smaple1.reorder.sam REFERENCE=reference.fa
-samtools view -bS smaple1.reorder.sam -o smaple1.reorder.bam
-java -jar ~/software/picard-tools/SortSam.jar INPUT=smaple1.reorder.bam OUTPUT=smaple1.reorder.sort.bam SORT_ORDER=coordinate
-java -jar ~/software/picard-tools/MarkDuplicates.jar REMOVE_DUPLICATES=true MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=5000 I=smaple1.reorder.sort.bam O=smaple1.reorder.sort.dup.bam M=smaple1.metrics.txt
-samtools index smaple1.reorder.sort.dup.bam
-samtools view -h -q 1 -F 4 -F 256 -S smaple1.reorder.sort.dup.bam | grep -Ev "XA:Z|SA:Z" | samtools view -h -bS > unique.bam
-samtools index unique.bam
-java -Xmx20G -jar ~/software/picard-tools/GenomeAnalysisTK.jar -T RealignerTargetCreator -R reference.fasta -I unique.bam -o unique.realign.intervals
-java -Xmx20G -jar ~/software/picard-tools/GenomeAnalysisTK.jar -T IndelRealigner -R reference.fasta -I unique.bam -log unique.realign.log -targetIntervals unique.realign.intervals -o unique.align.bam
-java -Xmx50g -jar GenomeAnalysisTK.jar -T HaplotypeCaller  -R reference.fasta  -I unique.align.bam  --emitRefConfidence GVCF  -o sample1.g.vcf
-ls *.g.vcf>input.list
-java -Xmx100G -jar ~/software/picard-tools/GenomeAnalysisTK.jar -nct 4 -T HaplotypeCaller -R reference.fa  --variant input.list -o merged.vcf
+Population genomic analysis \
+call snp \
+samtools faidx reference.fa \
+bwa index reference.fa \
+java -jar ~/software/picard-tools/CreateSequenceDictionary.jar R=reference.fa O=reference.dict \
+bwa mem -t 2 -M -R '@RG\tID:maizemt\tSM:emp5-4-emp21-1\tPL:illumina\tLB:lib1\tCN:Minglab' reference5mt.fa smaple1_1.fq.gz smaple1_2.fq.gz > smaple1.sam \
+java -jar ~/software/picard-tools/ReorderSam.jar I=smaple1.sam O=smaple1.reorder.sam REFERENCE=reference.fa \
+samtools view -bS smaple1.reorder.sam -o smaple1.reorder.bam \
+java -jar ~/software/picard-tools/SortSam.jar INPUT=smaple1.reorder.bam OUTPUT=smaple1.reorder.sort.bam SORT_ORDER=coordinate \
+java -jar ~/software/picard-tools/MarkDuplicates.jar REMOVE_DUPLICATES=true MAX_FILE_HANDLES_FOR_READ_ENDS_MAP=5000 I=smaple1.reorder.sort.bam O=smaple1.reorder.sort.dup.bam M=smaple1.metrics.txt \
+samtools index smaple1.reorder.sort.dup.bam \
+samtools view -h -q 1 -F 4 -F 256 -S smaple1.reorder.sort.dup.bam | grep -Ev "XA:Z|SA:Z" | samtools view -h -bS > unique.bam \
+samtools index unique.bam \
+java -Xmx20G -jar ~/software/picard-tools/GenomeAnalysisTK.jar -T RealignerTargetCreator -R reference.fasta -I unique.bam -o unique.realign.intervals \
+java -Xmx20G -jar ~/software/picard-tools/GenomeAnalysisTK.jar -T IndelRealigner -R reference.fasta -I unique.bam -log unique.realign.log -targetIntervals unique.realign.intervals -o unique.align.bam \
+java -Xmx50g -jar GenomeAnalysisTK.jar -T HaplotypeCaller  -R reference.fasta  -I unique.align.bam  --emitRefConfidence GVCF  -o sample1.g.vcf \
+ls *.g.vcf>input.list \
+java -Xmx100G -jar ~/software/picard-tools/GenomeAnalysisTK.jar -nct 4 -T HaplotypeCaller -R reference.fa  --variant input.list -o merged.vcf \
 
 
 vcf filter   vcftoos-v0.1.13
@@ -282,21 +282,21 @@ vcftools --vcf mergeed.vcf \
  --out mafilt1 \
  --recode
 
-PCA gcta-v 1.26.0
-sed -i 's/Chr//g' group.nochr.vcf
-vcftools --vcf group.nochr.vcf --plink --out test 
-plink --noweb --file test --make-bed --out test
-gcta64 --bfile test --make-grm --autosome --out test
-gcta64 --grm test --pca 3 --out pcatmp
+PCA gcta-v 1.26.0 \
+sed -i 's/Chr//g' group.nochr.vcf \
+vcftools --vcf group.nochr.vcf --plink --out test  \
+plink --noweb --file test --make-bed --out test \
+gcta64 --bfile test --make-grm --autosome --out test \
+gcta64 --grm test --pca 3 --out pcatmp \
 
-tree  iqtree-v1.6.3
-perl ~/script/vcf2fasta.pl -v snp.vcf -o out.fasta
-iqtree  -s out.fasta -m MFP -nt AUTO -bb 1000  -bnni  -redo
+tree  iqtree-v1.6.3 \
+perl ~/script/vcf2fasta.pl -v snp.vcf -o out.fasta \
+iqtree  -s out.fasta -m MFP -nt AUTO -bb 1000  -bnni  -redo \
 
-admixture-v1.3.0
-vcftools --vcf group.recode.vcf --plink --out groupplink
-plink --noweb --file groupplink --make-bed --out groupplinkadmixture
-for K in {1..20}
+admixture-v1.3.0 \
+vcftools --vcf group.recode.vcf --plink --out groupplink \
+plink --noweb --file groupplink --make-bed --out groupplinkadmixture \
+for K in {1..20} 
 do
 echo "
 admixture --cv groupplinkadmixture.bed $K -j2 | tee log${K}.out; ">admixture.$K.sh 
@@ -313,77 +313,77 @@ done
 
 
 
-FST, pi, ta TajimaD LD
-vcftools --vcf groups.recode.vcf --weir-fst-pop smooth.txt --weir-fst-pop rough.txt --out fst_smooth_rough_bin --fst-window-size 50000 --fst-window-step 25000 
-vcftools --window-pi 50000  --vcf groupin.wild.recode.vcf --out 50k-pi.wild
-vcftools --vcf groupin.wild.recode.vcf  --TajimaD 50000  --out TajimaD.50k_wild
+FST, pi, ta TajimaD LD \
+vcftools --vcf groups.recode.vcf --weir-fst-pop smooth.txt --weir-fst-pop rough.txt --out fst_smooth_rough_bin --fst-window-size 50000 --fst-window-step 25000  \
+vcftools --window-pi 50000  --vcf groupin.wild.recode.vcf --out 50k-pi.wild \
+vcftools --vcf groupin.wild.recode.vcf  --TajimaD 50000  --out TajimaD.50k_wild \
 
-PopLDdecay -InVCF nooutgroup.recode.vcf -SubPop C1 -OutStat C1.stat
-Plot_MultiPop.pl -inList mullist -output multi
+PopLDdecay -InVCF nooutgroup.recode.vcf -SubPop C1 -OutStat C1.stat \
+Plot_MultiPop.pl -inList mullist -output multi \
 
-XP-CLR  https://github.com/hardingnj/xpclr
-vcftools --vcf groupina.recode.vcf  --remove removelist --recode --recode-INFO-all --out groupin
-sed -i '1953{s/_/-/g}' groupin.recode.vcf
-for((i=1;i<=14;i++));do vcftools --vcf groupin.recode.vcf --chr Chr$i  --recode --out chr$i.groupin;done
-for i in {2..14};do sed -i 's/Chr//g' chr$i.groupin.recode.vcf;done
-for i in {2..14};do vcftools --vcf chr$i".groupin.recode.vcf" --plink --out chr$i"plink";done
-for i in {2..14};do plink --file chr$i"plink" --make-bed --out chr$i"plink";done
+XP-CLR  https://github.com/hardingnj/xpclr \
+vcftools --vcf groupina.recode.vcf  --remove removelist --recode --recode-INFO-all --out groupin \
+sed -i '1953{s/_/-/g}' groupin.recode.vcf \
+for((i=1;i<=14;i++));do vcftools --vcf groupin.recode.vcf --chr Chr$i  --recode --out chr$i.groupin;done \
+for i in {2..14};do sed -i 's/Chr//g' chr$i.groupin.recode.vcf;done \
+for i in {2..14};do vcftools --vcf chr$i".groupin.recode.vcf" --plink --out chr$i"plink";done \
+for i in {2..14};do plink --file chr$i"plink" --make-bed --out chr$i"plink";done \ \
 for i in {2..14};do plink2 --bfile chr$i"plink" --recode vcf  id-paste=iid --out chr$i"plinknew";done
-source activate python36XPCLR
+source activate python36XPCLR \
 for i in {2..14};do xpclr --format vcf --out ./chr$i"outtest" --input chr$i"plinknew.vcf" --samplesA wildlist --samplesB hawaiilist --chr $i --size 50000 --step 20000;done
 
 
-populaton history
-ANGSD angsd0.932
-Stairway plots
+populaton history \
+ANGSD angsd0.932 \
+Stairway plots \
 
-angsd -bam var.bamlist -doSaf 1 -out var -anc reference.fasta -GL 2 -fold 1 -only_proper_pairs 1 -uniqueOnly 1 -remove_bads 1 -minQ 20 -minMapQ 40 
-realSFS var.saf.idx  > var.sfs
-java -cp stairway_plot_es Stairbuilder two-epoch_fold.blueprint
-bash two-epoch_fold.blueprint.sh
+angsd -bam var.bamlist -doSaf 1 -out var -anc reference.fasta -GL 2 -fold 1 -only_proper_pairs 1 -uniqueOnly 1 -remove_bads 1 -minQ 20 -minMapQ 40  \
+realSFS var.saf.idx  > var.sfs \
+java -cp stairway_plot_es Stairbuilder two-epoch_fold.blueprint \
+bash two-epoch_fold.blueprint.sh \
 
 
-scm++  smcpp==1.15.2
-bgzip -c group.recode.vcf >group.recode.vcf.gz 
-tabix -p vcf group.recode.vcf.gz
+scm++  smcpp==1.15.2 \
+bgzip -c group.recode.vcf >group.recode.vcf.gz  \
+tabix -p vcf group.recode.vcf.gz \
 
-smc++ vcf2smc group.recode.vcf.gz chr1.smc.gz Chr1 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr2.smc.gz Chr2 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr3.smc.gz Chr3 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr4.smc.gz Chr4 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr5.smc.gz Chr5 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr6.smc.gz Chr6 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr7.smc.gz Chr7 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr8.smc.gz Chr8 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr9.smc.gz Chr9 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr10.smc.gz Chr10 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr11.smc.gz Chr11 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr12.smc.gz Chr12 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr13.smc.gz Chr13 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc group.recode.vcf.gz chr14.smc.gz Chr14 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr1.smc.gz Chr1 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr2.smc.gz Chr2 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr3.smc.gz Chr3 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr4.smc.gz Chr4 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr5.smc.gz Chr5 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr6.smc.gz Chr6 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr7.smc.gz Chr7 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr8.smc.gz Chr8 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr9.smc.gz Chr9 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr10.smc.gz Chr10 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr11.smc.gz Chr11 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr12.smc.gz Chr12 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr13.smc.gz Chr13 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
-smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr14.smc.gz Chr14 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03
+smc++ vcf2smc group.recode.vcf.gz chr1.smc.gz Chr1 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr2.smc.gz Chr2 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr3.smc.gz Chr3 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr4.smc.gz Chr4 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr5.smc.gz Chr5 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr6.smc.gz Chr6 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr7.smc.gz Chr7 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr8.smc.gz Chr8 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr9.smc.gz Chr9 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr10.smc.gz Chr10 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr11.smc.gz Chr11 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr12.smc.gz Chr12 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr13.smc.gz Chr13 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc group.recode.vcf.gz chr14.smc.gz Chr14 wild:s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr1.smc.gz Chr1 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr2.smc.gz Chr2 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr3.smc.gz Chr3 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr4.smc.gz Chr4 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr5.smc.gz Chr5 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr6.smc.gz Chr6 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr7.smc.gz Chr7 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr8.smc.gz Chr8 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr9.smc.gz Chr9 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr10.smc.gz Chr10 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr11.smc.gz Chr11 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr12.smc.gz Chr12 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr13.smc.gz Chr13 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
+smc++ vcf2smc --cores 12 group.recode.vcf.gz cultivarAddwildchr14.smc.gz Chr14 cultivarAddwild:M10,M1,M23,M24,M25,M26,M27,M29,M2,M32,M34,M38,M39,M3,M40,M41,M43,M44,M45,M47,M4,M5,M6,M7,M9,s1001-002,s1001-003,s1003-001,s1008-005,s1009-003,s1009-004,s1009-006,s1020-001,s1020-006,s1053-005,s1055-002,s1055-006,s1058-003,s1076-003,s1076-005A,s1076-005B,s1077-006A,s1077-006B,W01-MB1,W02-MB3,W02-MB5,W04-MB04,W05-MB05,W06-MCk03,W06-MCk06,W08-Mo04,W11-Am6,W17-UC2,W17-UC4,W17-UC6,W20-Sa4,W8b-Mo10,W8b-Mo11,W8b-Mo14,W9b-Mo07,W-Am279,W-Lan-02,W-Mck02,W-Mck03 \
 
-mkdir smc
-mv *.smc.gz smc
-smc++ estimate -o analysis/ 4.175e-9 smc/*.smc.gz
-smc++ plot example.png analysis/model.final.json
+mkdir smc \
+mv *.smc.gz smc \
+smc++ estimate -o analysis/ 4.175e-9 smc/*.smc.gz \
+smc++ plot example.png analysis/model.final.json \
 
-mkdir smcVarWild;
-mv *.smc.gz smcVarWild
+mkdir smcVarWild; \
+mv *.smc.gz smcVarWild \
 
-smc++ estimate --cores 12 --timepoints 50 10000000 --spline cubic --knots 10 -o analysiscultivarwild5/ 4.175e-9 smcVarWild/*.smc.gz
-smc++ plot -g 8 -c cultivarwild5.png analysiscultivarwild5/model.final.json
+smc++ estimate --cores 12 --timepoints 50 10000000 --spline cubic --knots 10 -o analysiscultivarwild5/ 4.175e-9 smcVarWild/*.smc.gz \
+smc++ plot -g 8 -c cultivarwild5.png analysiscultivarwild5/model.final.json \
 
