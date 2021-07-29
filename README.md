@@ -3,9 +3,9 @@ script
 
 
 
-assembly
-contig assembly
-canu1.8
+assembly \
+contig assembly \
+canu1.8 \
 
 
 canu -correct \
