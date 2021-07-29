@@ -6,6 +6,8 @@ script
 assembly
 contig assembly
 canu1.8
+
+
 canu -correct \
 	-p Mt -d Mi-pacbio \
 	executiveThreads=20 genomeSize=1g \
@@ -121,27 +123,27 @@ mkdir cdstime ;& cd cdstime
 mkdir pep ; mkdir cds; mkdir aln; mkdir time
 cd pep
 ln -s ../../Single_Copy_Orthologue_Sequences/* ./
-##filter single copy group, del SD>40 & len<120 
+filter single copy group, del SD>40 & len<120 
 for i in *.fa;do perl ~/script/getFaLen.pl -i $i -o $i.len;done
-##coln2raw
+coln2raw
 for b in *.len;do awk '{for(i=0;++i<=NF;)a[i]=a[i]?a[i] FS $i:$i}END{for(i=0;i++<NF;)print a[i]}'  $b >$b".1";done
-##linux insert the ID to the first col
+linux insert the ID to the first col
 for b in *.1;do  awk '{print FILENAME"\t"$1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7}' $b|sed -n '2p';done >>all.len
-##del SD>40 & len<120 need produce manually
+del SD>40 & len<120 need produce manually
 cd ../cds;vi list.keep
 for i in `cat list.keep`;do  ln -s ../pep/$i'.fa' $i'.pep.fa';done
-##get the ID of every cluster
+get the ID of every cluster
 for i in *.fa;do grep '>' $i |sed 's/>//g' >$i.ID;done
-##get the cds of every gene ID
+get the cds of every gene ID
 for i in *.ID;do perl ~/script/getSeqFromList.pl -l $i -d ../all.cds -o $i".fa";done
 for i in `cat list.keep`;do mv $i'.pep.fa.ID.fa' $i'.ID.fa';done
-##Sort cds and pep
+Sort cds and pep
 for i in `cat list.keep`;do seqkit sort $i".pep.fa" >$i".pep.sort.fa";done  
 for i in `cat list.keep`;do seqkit sort $i".ID.fa" >$i".ID.sort.fa";done
-##get homologs list
+get homologs list
 for i in `cat list.keep`;do grep '>' $i".pep.sort.fa" |sed 's/>//g' >$i.ID;done
 for i in `cat list.keep`; do sed  ':t;N;s/\n/\t/;b t' $i'.ID' > $i".homologs";done
-## ParaAT.pl alignment
+ParaAT.pl alignment
 vi proc;2
 for i in `cat list.keep`;do ParaAT.pl -h $i".homologs" -a $i".pep.sort.fa" -n $i".ID.sort.fa" -m muscle -f fasta -p proc -o $i;done
 cd ../aln
@@ -311,7 +313,7 @@ done
 
 
 
-#ST, pi, ta TajimaD LD
+FST, pi, ta TajimaD LD
 vcftools --vcf groups.recode.vcf --weir-fst-pop smooth.txt --weir-fst-pop rough.txt --out fst_smooth_rough_bin --fst-window-size 50000 --fst-window-step 25000 
 vcftools --window-pi 50000  --vcf groupin.wild.recode.vcf --out 50k-pi.wild
 vcftools --vcf groupin.wild.recode.vcf  --TajimaD 50000  --out TajimaD.50k_wild
