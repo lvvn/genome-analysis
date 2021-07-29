@@ -1,11 +1,11 @@
-# genome-analysis
+genome-analysis
 script
 
 
 
-#assembly
-##contig assembly
-###canu1.8
+assembly
+contig assembly
+canu1.8
 canu -correct \
 	-p Mt -d Mi-pacbio \
 	executiveThreads=20 genomeSize=1g \
@@ -26,10 +26,10 @@ canu -assemble \
     correctedErrorRate=0.050 \
     -pacbio-corrected Mi-pacbio/Mi.trimmedReads.fasta.gz
 
-### busco-3.0.2
+busco-3.0.2
 run_BUSCO.py -i ./canu.asm.fasta -l ./embryophyta_odb10 -o canu -m genome -c 6
 
-### polish-1.24 , bwa-v0.7.17, samtools-v1.9
+ polish-1.24 , bwa-v0.7.17, samtools-v1.9
 bwa index ./nd.asm.fasta
 bwa mem -t 30 ./canu.asm.fasta M1_R1.fq.gz M1_R2.fq.gz > align.sam
 samtools view -Sb -@ 30 align.sam > align.bam
@@ -38,14 +38,14 @@ samtools faidx ./canu.asm.fasta
 samtools index sorted.bam
 java -Xmx200G -jar ~/software/pilon-1.24.jar --genome ./canu.asm.fasta --fix all --changes --frags sorted.bam --output polish-canu --outdir canu.polish1ed --vcf 2> pilon.log
 
-##remove redundans :purge_haplotigs
+remove redundans :purge_haplotigs
 
 minimap2 -t 10 -ax map-pb canu.polish.fasta pacbio.fasta --secondary=no | samtools sort -m 1G -o aligned.bam -T tmp.ali
 purge_haplotigs  hist  -b aligned.bam  -g canu.polish.fasta  -t 10
 purge_haplotigs cov -i aligned.bam.gencov -l 15 -m 67 -h 140
 purge_haplotigs purge -g canu.polish.fasta  -c coverage_stats.csv
 
-##chromosome assembly   bedtools v2.25.0
+chromosome assembly   bedtools v2.25.0
 bwa index canu.polish.purge.fasta;
 samtools faidx canu.polish.purge.fasta;
 bwa aln -t 24 canu.polish.purge.fasta hic_1.fq.gz > macadamia_R1.sai;
@@ -66,30 +66,30 @@ for i in Chr*.txt;do echo "allhic optimize $i sample.clean.clm";done >cmd.list
 perl ~/scripts/multi_cmd.pbs2.sh；
 ALLHiC_build canu.polish.purge.fasta
 
-### plot
+ plot
 perl getFaLen.pl -i groups.asm.fasta -o len.txt
 grep sample len.txt > chrn.list
 ALLHiC_plot sample.bwa_mem.bam groups.agp chrn.list 150000 pdf
 
 
-#genome annotation
+genome annotation
 perl ~/geta.pl --RM_species Embryophyta --genome canu.polished.contig.fasta -1 all_R1.fq.gz  -2 all_R2.fq.gz  --protein pepHomolog.fasta --augustus_species macadamia  --out_prefix Mi  --cpu 24 --gene_prefix MiGene --pfam_db ~/software/hmmer-3.1/Pfam-A.hmm
 
-## busco-1.24
+busco-1.24
 run_BUSCO.py -i ./out.pep.fasta -l ./embryophyta_odb10 -o pep -m protein -c 6
 
 
-#genome TE annotation
+genome TE annotation
 perl ~/software/TE_pip.pl -i groups.asm.fasta -t 24
 
 
-##TE-Kimura
+TE-Kimura
 RepeatMasker -gff -pa 12 -a  -lib ../usalotusTE/consensi.fa.classified  ../groups.asm.fasta
 perl /public1/user_program/RepeatMasker/util/calcDivergenceFromAlign.pl -s groups.asm.divsum  ../groups.asm.fasta.align
 perl /public1/user_program/RepeatMasker/util/createRepeatLandscape.pl -div groups.asm.divsum > groups.asm.html
 
 
-#WGD analysis  (https://github.com/arzwa/wgd)
+WGD analysis  (https://github.com/arzwa/wgd)
 source activate python36
 wgd mcl -s macadamia.fasta --cds --mcl -o macadamia_out
 wgd mcl -s lotus.fasta --cds --mcl -o lotus_out
@@ -98,16 +98,16 @@ mkdir ks_out   ## move .mcl to ks_out
 mv macadamia_out/macadamia.fasta.blast.tsv.mcl ks_out/macadamia.mcl
 mv lotus_out/lotus.fasta.blast.tsv.mcl ks_out/lotus.mcl
 mv macadamia_lotus_out/macadamia_lotus.ovo.tsv ks_out/macadamia_lotus.mcl
-### wgd ksd calculate .mcl to Ks distribution
+wgd ksd calculate .mcl to Ks distribution
 wgd ksd macadamia.mcl macadamia.fasta  -n 8 -o macadamia_ks
 wgd ksd lotus.mcl lotus.fasta -n 8 -o lotus_ks
 wgd ksd -o macadamia_lotus_ks macadamia_lotus.mcl macadamia.fasta lotus.fasta -n 8
 mkdir ksout ##move .ks.tsv to ksout
-###wgd viz plot
-#single plot
+wgd viz plot
+single plot
 wgd viz -ks macadamia.ks.tsv  
 wgd viz -ks ksout/ -c red,blue,yellow
-#merge plot
+merge plot
 bokeh serve &       
 wgd viz -i -ks macadamia.fasta.ks.tsv,macadamia.fasta_lotus.fasta.ks.tsv,lotus.fasta.ks.tsv
 
@@ -116,7 +116,7 @@ wgd viz -i -ks macadamia.fasta.ks.tsv,macadamia.fasta_lotus.fasta.ks.tsv,lotus.f
 orthofinder -f orthsp -M msa -S diamond -t 24 -a 16 
 
 
-#species tree $ divergence time
+species tree $ divergence time
 mkdir cdstime ;& cd cdstime
 mkdir pep ; mkdir cds; mkdir aln; mkdir time
 cd pep
@@ -160,7 +160,7 @@ mcmctree mcmctree.ct2
 
 
 
-## Synteny analyses McScan
+Synteny analyses McScan
 python -m jcvi.formats.gff bed --type=mRNA --key=Name macadamia.gff3 -o macadamia.bed
 python -m jcvi.formats.gff bed --type=mRNA --key=Name lotus.gff -o lotus.bed
 python -m jcvi.compara.catalog ortholog macadamia lotus
@@ -175,7 +175,7 @@ python -m jcvi.compara.synteny screen --minspan=30 --simple macadamia.lotus.anch
 python -m jcvi.graphics.karyotype seqids layout
 
 
-#RNA ananlysis
+RNA ananlysis
 perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell1-1_R1.fq.gz	--right rawdata/shell1-1_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell1-1
 perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell1-2_R1.fq.gz	--right rawdata/shell1-2_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell1-2
 perl align_and_estimate_abundance.pl --transcripts filter.cds.fasta --seqType fq --left rawdata/shell1-3_R1.fq.gz	--right rawdata/shell1-3_R2.fq.gz	   --est_method RSEM --aln_method bowtie --gene_trans_map gene_trans_map.tab --prep_reference --thread_count 4 --output_dir OUTPUT/shell1-3
@@ -220,7 +220,7 @@ perl ~/software/trinityrnaseq-Trinity-v2.6.6/Analysis/DifferentialExpression/run
 perl ~/software/trinityrnaseq-Trinity-v2.6.6/Analysis/DifferentialExpression/analyze_diff_expr.pl --matrix ../RSEM.gene.counts.matrix.TMM_normalized.FPKM -P 0.01 -C 2 --samples ../samples_described.txt
 
 
-##mfuzz
+mfuzz
 library("Mfuzz")
 
 gene <- read.table("new.average.FPKM",header = T,row.names=1,sep="\t")
@@ -244,8 +244,8 @@ mfuzz.plot(gene.s,cl,mfrow=c(2,3),new.window= FALSE,time.labels = c('Shell1','Sh
 dev.off()
 
 
-#Population genomic analysis
-##call snp
+Population genomic analysis
+call snp
 samtools faidx reference.fa
 bwa index reference.fa
 java -jar ~/software/picard-tools/CreateSequenceDictionary.jar R=reference.fa O=reference.dict
@@ -264,7 +264,7 @@ ls *.g.vcf>input.list
 java -Xmx100G -jar ~/software/picard-tools/GenomeAnalysisTK.jar -nct 4 -T HaplotypeCaller -R reference.fa  --variant input.list -o merged.vcf
 
 
-#vcf filter   vcftoos-v0.1.13
+vcf filter   vcftoos-v0.1.13
 vcftools --vcf mergeed.vcf \
  --recode-INFO-all \
  --max-alleles 2 \
@@ -280,18 +280,18 @@ vcftools --vcf mergeed.vcf \
  --out mafilt1 \
  --recode
 
-# PCA gcta-v 1.26.0
+PCA gcta-v 1.26.0
 sed -i 's/Chr//g' group.nochr.vcf
 vcftools --vcf group.nochr.vcf --plink --out test 
 plink --noweb --file test --make-bed --out test
 gcta64 --bfile test --make-grm --autosome --out test
 gcta64 --grm test --pca 3 --out pcatmp
 
-#tree  iqtree-v1.6.3
+tree  iqtree-v1.6.3
 perl ~/script/vcf2fasta.pl -v snp.vcf -o out.fasta
 iqtree  -s out.fasta -m MFP -nt AUTO -bb 1000  -bnni  -redo
 
-#admixture-v1.3.0
+admixture-v1.3.0
 vcftools --vcf group.recode.vcf --plink --out groupplink
 plink --noweb --file groupplink --make-bed --out groupplinkadmixture
 for K in {1..20}
@@ -311,7 +311,7 @@ done
 
 
 
-#FST, pi, ta TajimaD LD
+#ST, pi, ta TajimaD LD
 vcftools --vcf groups.recode.vcf --weir-fst-pop smooth.txt --weir-fst-pop rough.txt --out fst_smooth_rough_bin --fst-window-size 50000 --fst-window-step 25000 
 vcftools --window-pi 50000  --vcf groupin.wild.recode.vcf --out 50k-pi.wild
 vcftools --vcf groupin.wild.recode.vcf  --TajimaD 50000  --out TajimaD.50k_wild
@@ -319,7 +319,7 @@ vcftools --vcf groupin.wild.recode.vcf  --TajimaD 50000  --out TajimaD.50k_wild
 PopLDdecay -InVCF nooutgroup.recode.vcf -SubPop C1 -OutStat C1.stat
 Plot_MultiPop.pl -inList mullist -output multi
 
-##XP-CLR  https://github.com/hardingnj/xpclr
+XP-CLR  https://github.com/hardingnj/xpclr
 vcftools --vcf groupina.recode.vcf  --remove removelist --recode --recode-INFO-all --out groupin
 sed -i '1953{s/_/-/g}' groupin.recode.vcf
 for((i=1;i<=14;i++));do vcftools --vcf groupin.recode.vcf --chr Chr$i  --recode --out chr$i.groupin;done
@@ -331,9 +331,9 @@ source activate python36XPCLR
 for i in {2..14};do xpclr --format vcf --out ./chr$i"outtest" --input chr$i"plinknew.vcf" --samplesA wildlist --samplesB hawaiilist --chr $i --size 50000 --step 20000;done
 
 
-##populaton history
-#ANGSD angsd0.932
-#Stairway plots
+populaton history
+ANGSD angsd0.932
+Stairway plots
 
 angsd -bam var.bamlist -doSaf 1 -out var -anc reference.fasta -GL 2 -fold 1 -only_proper_pairs 1 -uniqueOnly 1 -remove_bads 1 -minQ 20 -minMapQ 40 
 realSFS var.saf.idx  > var.sfs
@@ -341,7 +341,7 @@ java -cp stairway_plot_es Stairbuilder two-epoch_fold.blueprint
 bash two-epoch_fold.blueprint.sh
 
 
-#scm++  smcpp==1.15.2
+scm++  smcpp==1.15.2
 bgzip -c group.recode.vcf >group.recode.vcf.gz 
 tabix -p vcf group.recode.vcf.gz
 
