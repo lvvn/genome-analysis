@@ -91,90 +91,90 @@ perl /public1/user_program/RepeatMasker/util/calcDivergenceFromAlign.pl -s group
 perl /public1/user_program/RepeatMasker/util/createRepeatLandscape.pl -div groups.asm.divsum > groups.asm.html \
 
 
-WGD analysis  (https://github.com/arzwa/wgd)
-source activate python36
-wgd mcl -s macadamia.fasta --cds --mcl -o macadamia_out
-wgd mcl -s lotus.fasta --cds --mcl -o lotus_out
-wgd mcl --cds --one_v_one -s macadamia.fasta,lotus.fasta -id macadamia,lotus -e 1e-8 -o macadamia_lotus_out
-mkdir ks_out   ## move .mcl to ks_out
-mv macadamia_out/macadamia.fasta.blast.tsv.mcl ks_out/macadamia.mcl
-mv lotus_out/lotus.fasta.blast.tsv.mcl ks_out/lotus.mcl
-mv macadamia_lotus_out/macadamia_lotus.ovo.tsv ks_out/macadamia_lotus.mcl
-wgd ksd calculate .mcl to Ks distribution
-wgd ksd macadamia.mcl macadamia.fasta  -n 8 -o macadamia_ks
-wgd ksd lotus.mcl lotus.fasta -n 8 -o lotus_ks
-wgd ksd -o macadamia_lotus_ks macadamia_lotus.mcl macadamia.fasta lotus.fasta -n 8
-mkdir ksout ##move .ks.tsv to ksout
-wgd viz plot
-single plot
-wgd viz -ks macadamia.ks.tsv  
-wgd viz -ks ksout/ -c red,blue,yellow
-merge plot
+WGD analysis  (https://github.com/arzwa/wgd) \
+source activate python36 \
+wgd mcl -s macadamia.fasta --cds --mcl -o macadamia_out \
+wgd mcl -s lotus.fasta --cds --mcl -o lotus_out \
+wgd mcl --cds --one_v_one -s macadamia.fasta,lotus.fasta -id macadamia,lotus -e 1e-8 -o macadamia_lotus_out \
+mkdir ks_out   ## move .mcl to ks_out \
+mv macadamia_out/macadamia.fasta.blast.tsv.mcl ks_out/macadamia.mcl \
+mv lotus_out/lotus.fasta.blast.tsv.mcl ks_out/lotus.mcl \
+mv macadamia_lotus_out/macadamia_lotus.ovo.tsv ks_out/macadamia_lotus.mcl \
+wgd ksd calculate .mcl to Ks distribution \
+wgd ksd macadamia.mcl macadamia.fasta  -n 8 -o macadamia_ks \
+wgd ksd lotus.mcl lotus.fasta -n 8 -o lotus_ks \
+wgd ksd -o macadamia_lotus_ks macadamia_lotus.mcl macadamia.fasta lotus.fasta -n 8 \
+mkdir ksout ##move .ks.tsv to ksout \
+wgd viz plot \
+single plot \
+wgd viz -ks macadamia.ks.tsv   \
+wgd viz -ks ksout/ -c red,blue,yellow \
+merge plot \
 bokeh serve &       
-wgd viz -i -ks macadamia.fasta.ks.tsv,macadamia.fasta_lotus.fasta.ks.tsv,lotus.fasta.ks.tsv
+wgd viz -i -ks macadamia.fasta.ks.tsv,macadamia.fasta_lotus.fasta.ks.tsv,lotus.fasta.ks.tsv \
 
 
-#orthlogous analysis  orthofinder-v2.3.3
-orthofinder -f orthsp -M msa -S diamond -t 24 -a 16 
+#orthlogous analysis  orthofinder-v2.3.3 \
+orthofinder -f orthsp -M msa -S diamond -t 24 -a 16  \
 
 
-species tree $ divergence time
-mkdir cdstime ;& cd cdstime
-mkdir pep ; mkdir cds; mkdir aln; mkdir time
-cd pep
-ln -s ../../Single_Copy_Orthologue_Sequences/* ./
-filter single copy group, del SD>40 & len<120 
-for i in *.fa;do perl ~/script/getFaLen.pl -i $i -o $i.len;done
-coln2raw
-for b in *.len;do awk '{for(i=0;++i<=NF;)a[i]=a[i]?a[i] FS $i:$i}END{for(i=0;i++<NF;)print a[i]}'  $b >$b".1";done
-linux insert the ID to the first col
-for b in *.1;do  awk '{print FILENAME"\t"$1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7}' $b|sed -n '2p';done >>all.len
-del SD>40 & len<120 need produce manually
-cd ../cds;vi list.keep
-for i in `cat list.keep`;do  ln -s ../pep/$i'.fa' $i'.pep.fa';done
-get the ID of every cluster
-for i in *.fa;do grep '>' $i |sed 's/>//g' >$i.ID;done
-get the cds of every gene ID
-for i in *.ID;do perl ~/script/getSeqFromList.pl -l $i -d ../all.cds -o $i".fa";done
-for i in `cat list.keep`;do mv $i'.pep.fa.ID.fa' $i'.ID.fa';done
-Sort cds and pep
-for i in `cat list.keep`;do seqkit sort $i".pep.fa" >$i".pep.sort.fa";done  
-for i in `cat list.keep`;do seqkit sort $i".ID.fa" >$i".ID.sort.fa";done
-get homologs list
-for i in `cat list.keep`;do grep '>' $i".pep.sort.fa" |sed 's/>//g' >$i.ID;done
-for i in `cat list.keep`; do sed  ':t;N;s/\n/\t/;b t' $i'.ID' > $i".homologs";done
-ParaAT.pl alignment
-vi proc;2
+species tree $ divergence time \
+mkdir cdstime ;& cd cdstime \
+mkdir pep ; mkdir cds; mkdir aln; mkdir time \
+cd pep \
+ln -s ../../Single_Copy_Orthologue_Sequences/* ./ \
+filter single copy group, del SD>40 & len<120  \
+for i in *.fa;do perl ~/script/getFaLen.pl -i $i -o $i.len;done \
+coln2raw \
+for b in *.len;do awk '{for(i=0;++i<=NF;)a[i]=a[i]?a[i] FS $i:$i}END{for(i=0;i++<NF;)print a[i]}'  $b >$b".1";done \
+linux insert the ID to the first col \
+for b in *.1;do  awk '{print FILENAME"\t"$1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"$7}' $b|sed -n '2p';done >>all.len \
+del SD>40 & len<120 need produce manually \
+cd ../cds;vi list.keep \
+for i in `cat list.keep`;do  ln -s ../pep/$i'.fa' $i'.pep.fa';done \
+get the ID of every cluster \
+for i in *.fa;do grep '>' $i |sed 's/>//g' >$i.ID;done \
+get the cds of every gene ID \
+for i in *.ID;do perl ~/script/getSeqFromList.pl -l $i -d ../all.cds -o $i".fa";done \
+for i in `cat list.keep`;do mv $i'.pep.fa.ID.fa' $i'.ID.fa';done \
+Sort cds and pep \
+for i in `cat list.keep`;do seqkit sort $i".pep.fa" >$i".pep.sort.fa";done   \
+for i in `cat list.keep`;do seqkit sort $i".ID.fa" >$i".ID.sort.fa";done \
+get homologs list \
+for i in `cat list.keep`;do grep '>' $i".pep.sort.fa" |sed 's/>//g' >$i.ID;done \
+for i in `cat list.keep`; do sed  ':t;N;s/\n/\t/;b t' $i'.ID' > $i".homologs";done \
+ParaAT.pl alignment \
+vi proc;2 \
 for i in `cat list.keep`;do ParaAT.pl -h $i".homologs" -a $i".pep.sort.fa" -n $i".ID.sort.fa" -m muscle -f fasta -p proc -o $i;done
-cd ../aln
+cd ../aln \
 ln -s ../cds/OG001*/*.fasta ./
-for i in `ls *.fasta`;do Gblocks $i -b4=5 -b5=n -t=c -e=.2;done
-for i in `ls *.2`;do seqkit sort $i >$i.3;done
-for i in `ls *.3`;do seqkit seq $i -w 0 > $i.4;done
-paste -d " " *.4 > all.fa
-python ~/script/python/splitname.py all.fa allsplit.fa
-iqtree  -s allsplit.fa -m MFP -nt AUTO -bb 1000  -bnni  -redo
-raxmlHPC-PTHREADS -T 26 -f a -x 12345 -p 12345 -N 1000 -m PROTCATJTTF -k -O -o Osativa -n all.tre -s allsplit.phy
-sed -i 's\ \\g' allsplit.fa
-mcmctree mcmctree.ct1
-mv out.BV in.BV
-mcmctree mcmctree.ct2
+for i in `ls *.fasta`;do Gblocks $i -b4=5 -b5=n -t=c -e=.2;done \
+for i in `ls *.2`;do seqkit sort $i >$i.3;done \
+for i in `ls *.3`;do seqkit seq $i -w 0 > $i.4;done \
+paste -d " " *.4 > all.fa \
+python ~/script/python/splitname.py all.fa allsplit.fa \
+iqtree  -s allsplit.fa -m MFP -nt AUTO -bb 1000  -bnni  -redo \
+raxmlHPC-PTHREADS -T 26 -f a -x 12345 -p 12345 -N 1000 -m PROTCATJTTF -k -O -o Osativa -n all.tre -s allsplit.phy \
+sed -i 's\ \\g' allsplit.fa \
+mcmctree mcmctree.ct1 \
+mv out.BV in.BV \
+mcmctree mcmctree.ct2 \
 
 
 
-Synteny analyses McScan
-python -m jcvi.formats.gff bed --type=mRNA --key=Name macadamia.gff3 -o macadamia.bed
-python -m jcvi.formats.gff bed --type=mRNA --key=Name lotus.gff -o lotus.bed
-python -m jcvi.compara.catalog ortholog macadamia lotus
-python -m jcvi.graphics.dotplot macadamia.lotus.anchors
-rm grape.peach.last.filtered 
-python -m jcvi.compara.catalog ortholog macadamia lotus --cscore=.70
-python -m jcvi.graphics.dotplot macadamia.lotus.anchors
-python -m jcvi.compara.synteny depth --histogram macadamia.lotus.anchors
-vi seqids
-vi blocks.layout
-python -m jcvi.compara.synteny screen --minspan=30 --simple macadamia.lotus.anchors macadamia.lotus.anchors.new
-python -m jcvi.graphics.karyotype seqids layout
+Synteny analyses McScan \
+python -m jcvi.formats.gff bed --type=mRNA --key=Name macadamia.gff3 -o macadamia.bed \
+python -m jcvi.formats.gff bed --type=mRNA --key=Name lotus.gff -o lotus.bed \
+python -m jcvi.compara.catalog ortholog macadamia lotus \
+python -m jcvi.graphics.dotplot macadamia.lotus.anchors \
+rm grape.peach.last.filtered  \
+python -m jcvi.compara.catalog ortholog macadamia lotus --cscore=.70 \
+python -m jcvi.graphics.dotplot macadamia.lotus.anchors \
+python -m jcvi.compara.synteny depth --histogram macadamia.lotus.anchors \
+vi seqids \
+vi blocks.layout \
+python -m jcvi.compara.synteny screen --minspan=30 --simple macadamia.lotus.anchors macadamia.lotus.anchors.new \
+python -m jcvi.graphics.karyotype seqids layout \
 
 
 RNA ananlysis
