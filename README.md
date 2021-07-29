@@ -28,67 +28,67 @@ canu -assemble \
     correctedErrorRate=0.050 \
     -pacbio-corrected Mi-pacbio/Mi.trimmedReads.fasta.gz
 
-busco-3.0.2
+busco-3.0.2 \
 run_BUSCO.py -i ./canu.asm.fasta -l ./embryophyta_odb10 -o canu -m genome -c 6
 
- polish-1.24 , bwa-v0.7.17, samtools-v1.9
-bwa index ./nd.asm.fasta
-bwa mem -t 30 ./canu.asm.fasta M1_R1.fq.gz M1_R2.fq.gz > align.sam
-samtools view -Sb -@ 30 align.sam > align.bam
-samtools sort -@ 30 -O BAM -o sorted.bam align.bam 
-samtools faidx ./canu.asm.fasta
-samtools index sorted.bam
+ polish-1.24 , bwa-v0.7.17, samtools-v1.9 \
+bwa index ./nd.asm.fasta \
+bwa mem -t 30 ./canu.asm.fasta M1_R1.fq.gz M1_R2.fq.gz > align.sam \
+samtools view -Sb -@ 30 align.sam > align.bam \
+samtools sort -@ 30 -O BAM -o sorted.bam align.bam  \
+samtools faidx ./canu.asm.fasta \
+samtools index sorted.bam \
 java -Xmx200G -jar ~/software/pilon-1.24.jar --genome ./canu.asm.fasta --fix all --changes --frags sorted.bam --output polish-canu --outdir canu.polish1ed --vcf 2> pilon.log
 
 remove redundans :purge_haplotigs
 
-minimap2 -t 10 -ax map-pb canu.polish.fasta pacbio.fasta --secondary=no | samtools sort -m 1G -o aligned.bam -T tmp.ali
-purge_haplotigs  hist  -b aligned.bam  -g canu.polish.fasta  -t 10
-purge_haplotigs cov -i aligned.bam.gencov -l 15 -m 67 -h 140
-purge_haplotigs purge -g canu.polish.fasta  -c coverage_stats.csv
+minimap2 -t 10 -ax map-pb canu.polish.fasta pacbio.fasta --secondary=no | samtools sort -m 1G -o aligned.bam -T tmp.ali \
+purge_haplotigs  hist  -b aligned.bam  -g canu.polish.fasta  -t 10 \
+purge_haplotigs cov -i aligned.bam.gencov -l 15 -m 67 -h 140 \
+purge_haplotigs purge -g canu.polish.fasta  -c coverage_stats.csv \
 
-chromosome assembly   bedtools v2.25.0
-bwa index canu.polish.purge.fasta;
-samtools faidx canu.polish.purge.fasta;
-bwa aln -t 24 canu.polish.purge.fasta hic_1.fq.gz > macadamia_R1.sai;
-bwa aln -t 24 canu.polish.purge.fasta hic_2.fq.gz > macadamia_R2.sai;
-bwa sampe canu.polish.purge.fasta macadamia_R1.sai macadamia_R2.sai hic_1.fq.gz hic_2.fq.gz > sample.bwa_aln.sam;
-samtools view -bS sample.bwa_aln.sam -o sample.bwa_aln.bam;
-perl ~software/ALLHiC/scripts/make_bed_around_RE_site.pl contig.pilon.fasta GATC 500;
-bedtools intersect -abam sample.bwa_aln.bam -b canu.polish.purge.fasta.near_GATC.500.bed > sample.bwa_aln.REduced.bam;
-samtools view -F12 sample.bwa_aln.REduced.bam -b -o sample.bwa_aln.REduced.paired_only.bam;
-samtools flagstat sample.bwa_aln.REduced.paired_only.bam > sample.bwa_aln.REduced.paired_only.flagstat;
-perl ~/software/ALLHiC/scripts/filterBAM_forHiC.pl sample.bwa_aln.REduced.paired_only.bam sample.clean.sam;
-samtools view -bt canu.polish.purge.fasta sample.clean.sam > sample.clean.bam;
-samtools sort sample.clean.bam -o sample.clean.sorted.bam;
-samtools index sample.clean.sorted.bam;
-ALLHiC_partition -b sample.clean.bam -r canu.polish.purge.fasta -e GATC -k 14
-for i in {1..14};do mv 'sample.clean.counts_GATC.14g'$i'.txt' Chr$i.txt;done
-for i in Chr*.txt;do echo "allhic optimize $i sample.clean.clm";done >cmd.list
-perl ~/scripts/multi_cmd.pbs2.sh；
-ALLHiC_build canu.polish.purge.fasta
+chromosome assembly   bedtools v2.25.0 \
+bwa index canu.polish.purge.fasta; \
+samtools faidx canu.polish.purge.fasta; \
+bwa aln -t 24 canu.polish.purge.fasta hic_1.fq.gz > macadamia_R1.sai; \
+bwa aln -t 24 canu.polish.purge.fasta hic_2.fq.gz > macadamia_R2.sai; \
+bwa sampe canu.polish.purge.fasta macadamia_R1.sai macadamia_R2.sai hic_1.fq.gz hic_2.fq.gz > sample.bwa_aln.sam; \
+samtools view -bS sample.bwa_aln.sam -o sample.bwa_aln.bam; \
+perl ~software/ALLHiC/scripts/make_bed_around_RE_site.pl contig.pilon.fasta GATC 500; \
+bedtools intersect -abam sample.bwa_aln.bam -b canu.polish.purge.fasta.near_GATC.500.bed > sample.bwa_aln.REduced.bam; \
+samtools view -F12 sample.bwa_aln.REduced.bam -b -o sample.bwa_aln.REduced.paired_only.bam; \
+samtools flagstat sample.bwa_aln.REduced.paired_only.bam > sample.bwa_aln.REduced.paired_only.flagstat; \
+perl ~/software/ALLHiC/scripts/filterBAM_forHiC.pl sample.bwa_aln.REduced.paired_only.bam sample.clean.sam; \
+samtools view -bt canu.polish.purge.fasta sample.clean.sam > sample.clean.bam; \
+samtools sort sample.clean.bam -o sample.clean.sorted.bam; \
+samtools index sample.clean.sorted.bam; \
+ALLHiC_partition -b sample.clean.bam -r canu.polish.purge.fasta -e GATC -k 14 \
+for i in {1..14};do mv 'sample.clean.counts_GATC.14g'$i'.txt' Chr$i.txt;done \
+for i in Chr*.txt;do echo "allhic optimize $i sample.clean.clm";done >cmd.list \
+perl ~/scripts/multi_cmd.pbs2.sh； \
+ALLHiC_build canu.polish.purge.fasta \
 
- plot
-perl getFaLen.pl -i groups.asm.fasta -o len.txt
-grep sample len.txt > chrn.list
-ALLHiC_plot sample.bwa_mem.bam groups.agp chrn.list 150000 pdf
-
-
-genome annotation
-perl ~/geta.pl --RM_species Embryophyta --genome canu.polished.contig.fasta -1 all_R1.fq.gz  -2 all_R2.fq.gz  --protein pepHomolog.fasta --augustus_species macadamia  --out_prefix Mi  --cpu 24 --gene_prefix MiGene --pfam_db ~/software/hmmer-3.1/Pfam-A.hmm
-
-busco-1.24
-run_BUSCO.py -i ./out.pep.fasta -l ./embryophyta_odb10 -o pep -m protein -c 6
+ plot \
+perl getFaLen.pl -i groups.asm.fasta -o len.txt \
+grep sample len.txt > chrn.list \
+ALLHiC_plot sample.bwa_mem.bam groups.agp chrn.list 150000 pdf \
 
 
-genome TE annotation
-perl ~/software/TE_pip.pl -i groups.asm.fasta -t 24
+genome annotation \
+perl ~/geta.pl --RM_species Embryophyta --genome canu.polished.contig.fasta -1 all_R1.fq.gz  -2 all_R2.fq.gz  --protein pepHomolog.fasta --augustus_species macadamia  --out_prefix Mi  --cpu 24 --gene_prefix MiGene --pfam_db ~/software/hmmer-3.1/Pfam-A.hmm \
+
+busco-1.24 \
+run_BUSCO.py -i ./out.pep.fasta -l ./embryophyta_odb10 -o pep -m protein -c 6 \
 
 
-TE-Kimura
-RepeatMasker -gff -pa 12 -a  -lib ../usalotusTE/consensi.fa.classified  ../groups.asm.fasta
-perl /public1/user_program/RepeatMasker/util/calcDivergenceFromAlign.pl -s groups.asm.divsum  ../groups.asm.fasta.align
-perl /public1/user_program/RepeatMasker/util/createRepeatLandscape.pl -div groups.asm.divsum > groups.asm.html
+genome TE annotation \
+perl ~/software/TE_pip.pl -i groups.asm.fasta -t 24 \
+
+
+TE-Kimura \
+RepeatMasker -gff -pa 12 -a  -lib ../usalotusTE/consensi.fa.classified  ../groups.asm.fasta \
+perl /public1/user_program/RepeatMasker/util/calcDivergenceFromAlign.pl -s groups.asm.divsum  ../groups.asm.fasta.align \
+perl /public1/user_program/RepeatMasker/util/createRepeatLandscape.pl -div groups.asm.divsum > groups.asm.html \
 
 
 WGD analysis  (https://github.com/arzwa/wgd)
