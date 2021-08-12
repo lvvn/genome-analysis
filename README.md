@@ -104,7 +104,7 @@ perl easy_maker2.pl -r reference.fasta -h homolog.fasta -e all.transc.fasta
 perl ~/geta.pl --RM_species Embryophyta --genome canu.polished.contig.fasta -1 all_R1.fq.gz  -2 all_R2.fq.gz  --protein pepHomolog.fasta --augustus_species macadamia  --out_prefix Mi  --cpu 24 --gene_prefix MiGene --pfam_db ~/software/hmmer-3.1/Pfam-A.hmm \
 
 busco-1.24 \
-run_BUSCO.py -i ./out.pep.fasta -l ./embryophyta_odb10 -o pep -m protein -c 6 \
+run_BUSCO.py -i ./out.pep.fasta -l ./embryophyta_odb9 -o pep -m protein -c 6 \
 
 
 genome TE annotation \
