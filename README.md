@@ -29,7 +29,7 @@ canu -assemble \
     -pacbio-corrected Mi-pacbio/Mi.trimmedReads.fasta.gz
 
 busco-3.0.2 \
-run_BUSCO.py -i ./canu.asm.fasta -l ./embryophyta_odb10 -o canu -m genome -c 6
+run_BUSCO.py -i ./canu.asm.fasta -l ./embryophyta_odb9 -o canu -m genome -c 6
 
  polish-1.24 , bwa-v0.7.17, samtools-v1.9 \
 bwa index ./nd.asm.fasta \
@@ -75,6 +75,32 @@ ALLHiC_plot sample.bwa_mem.bam groups.agp chrn.list 150000 pdf \
 
 
 genome annotation \
+
+hisat2-build -p 8  ref.asm.fasta   index_base
+
+hisat2 -p 12 -x indexes/index_base -1 1-P_R1.fastq.gz,sample2  -2 1-P_R2.fastq.gz, sample2 |samtools view -bS - > bamfile/1-P.mapping.bam
+
+samtools sort -@ 12 1-P.mapping.bam  -o 1-P.sorted.bam
+
+stringtie 1-P.sorted.bam  -o 1-P.gtf -p 8 -G ref.gff
+
+gffread -w transcripts.fa -g ref.fasta  1-P.gtf
+
+/Launch_PASA_pipeline.pl \
+           -c alignAssembly.config -C -R -g genome_sample.fasta \
+           -t all_transcripts.fasta.clean -T -u all_transcripts.fasta \
+           -f FL_accs.txt --ALIGNERS blat,gmap --CPU 2
+
+Result: dirPATH/compreh_init_build/compreh_init_build.fasta
+
+
+cat transcripts.fa compreh_init_build.fasta > all.transc.fasta
+
+
+perl easy_maker2.pl -r reference.fasta -h homolog.fasta -e all.transc.fasta
+-s sp.hmm -g gmhmm.mod -l consensi.fa.classified -a 1-P -n 100
+
+
 perl ~/geta.pl --RM_species Embryophyta --genome canu.polished.contig.fasta -1 all_R1.fq.gz  -2 all_R2.fq.gz  --protein pepHomolog.fasta --augustus_species macadamia  --out_prefix Mi  --cpu 24 --gene_prefix MiGene --pfam_db ~/software/hmmer-3.1/Pfam-A.hmm \
 
 busco-1.24 \
