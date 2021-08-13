@@ -44,7 +44,7 @@ remove redundans :purge_haplotigs
 
 minimap2 -t 10 -ax map-pb canu.polish.fasta pacbio.fasta --secondary=no | samtools sort -m 1G -o aligned.bam -T tmp.ali \
 purge_haplotigs  hist  -b aligned.bam  -g canu.polish.fasta  -t 10 \
-purge_haplotigs cov -i aligned.bam.gencov -l 15 -m 67 -h 140 \
+purge_haplotigs cov -i aligned.bam.gencov -l 20 -m 65 -h 190 -j 95 -s 25 \
 purge_haplotigs purge -g canu.polish.fasta  -c coverage_stats.csv \
 
 chromosome assembly   bedtools v2.25.0 \
